@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #f4f6fb;
+  color: #1f2430;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5b6b8a;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #47536b;
+  max-width: 560px;
+}
+
+.hero-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(28, 38, 68, 0.12);
+}
+
+.hero-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.hero-card ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  color: #4e5c75;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(28, 38, 68, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card-header p {
+  color: #54617a;
+}
+
+.card-body {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #3e4a63;
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d5dbea;
+  font-size: 0.95rem;
+  background: #f9fbff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4c7dff;
+  box-shadow: 0 0 0 3px rgba(76, 125, 255, 0.15);
+  background: #fff;
+}
+
+.result {
+  display: grid;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #edf0f8;
+}
+
+.result div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+  color: #4a566f;
+}
+
+.result strong {
+  font-size: 1.05rem;
+  color: #15213b;
+}
+
+.footer {
+  padding: 28px 24px 40px;
+  text-align: center;
+  color: #6a7893;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 32px 18px 24px;
+  }
+
+  .hero-card {
+    order: -1;
+  }
+}
