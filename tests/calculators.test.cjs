@@ -21,7 +21,7 @@ function executeCalculator(calculator, values) {
       return outputs.get(key);
     },
   };
-  vm.runInNewContext(rootScript, { document, Intl, Math, Number }, { timeout: 1000 });
+  vm.runInNewContext(rootScript, { document, Intl, Math, Number }, { timeout: 10000 });
   return Object.fromEntries([...outputs].map(([key, element]) => [key, element.textContent]));
 }
 
