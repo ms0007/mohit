@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Financial Decision Toolkit</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Financial decision support</p>
+          <h1>Business-ready financial calculators</h1>
+          <p class="subtitle">
+            Compare loan options, project investment growth, and estimate break-even
+            points in one place. All inputs update instantly to help you make faster,
+            more informed decisions.
+          </p>
+        </div>
+        <div class="hero-card">
+          <h2>Quick tips</h2>
+          <ul>
+            <li>Use EMI to compare monthly loan affordability.</li>
+            <li>Compound interest helps quantify long-term returns.</li>
+            <li>NPV highlights whether a project creates value.</li>
+          </ul>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card" id="emi-calculator">
+          <div class="card-header">
+            <h3>EMI Calculator</h3>
+            <p>Estimate monthly loan repayments and total interest.</p>
+          </div>
+          <form class="card-body" data-calculator="emi">
+            <label>
+              Loan Amount
+              <input type="number" name="principal" value="500000" min="0" step="1000" />
+            </label>
+            <label>
+              Annual Interest Rate (%)
+              <input type="number" name="rate" value="9.5" min="0" step="0.01" />
+            </label>
+            <label>
+              Tenure (years)
+              <input type="number" name="years" value="5" min="0" step="0.5" />
+            </label>
+          </form>
+          <div class="result">
+            <div>
+              <span>Monthly EMI</span>
+              <strong data-output="emi-monthly">₹0</strong>
+            </div>
+            <div>
+              <span>Total Interest</span>
+              <strong data-output="emi-interest">₹0</strong>
+            </div>
+            <div>
+              <span>Total Payment</span>
+              <strong data-output="emi-total">₹0</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="compound-calculator">
+          <div class="card-header">
+            <h3>Compound Interest</h3>
+            <p>Project investment growth with compounding.</p>
+          </div>
+          <form class="card-body" data-calculator="compound">
+            <label>
+              Initial Investment
+              <input type="number" name="principal" value="250000" min="0" step="1000" />
+            </label>
+            <label>
+              Annual Interest Rate (%)
+              <input type="number" name="rate" value="7.2" min="0" step="0.01" />
+            </label>
+            <label>
+              Years
+              <input type="number" name="years" value="8" min="0" step="1" />
+            </label>
+            <label>
+              Compounds per year
+              <input type="number" name="frequency" value="4" min="1" step="1" />
+            </label>
+          </form>
+          <div class="result">
+            <div>
+              <span>Future Value</span>
+              <strong data-output="compound-future">₹0</strong>
+            </div>
+            <div>
+              <span>Total Interest Earned</span>
+              <strong data-output="compound-interest">₹0</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="break-even-calculator">
+          <div class="card-header">
+            <h3>Break-even Analysis</h3>
+            <p>Find the sales volume needed to cover fixed costs.</p>
+          </div>
+          <form class="card-body" data-calculator="breakeven">
+            <label>
+              Fixed Costs
+              <input type="number" name="fixed" value="120000" min="0" step="1000" />
+            </label>
+            <label>
+              Price per Unit
+              <input type="number" name="price" value="2500" min="0" step="10" />
+            </label>
+            <label>
+              Variable Cost per Unit
+              <input type="number" name="variable" value="1200" min="0" step="10" />
+            </label>
+          </form>
+          <div class="result">
+            <div>
+              <span>Break-even Units</span>
+              <strong data-output="breakeven-units">0</strong>
+            </div>
+            <div>
+              <span>Break-even Revenue</span>
+              <strong data-output="breakeven-revenue">₹0</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="roi-calculator">
+          <div class="card-header">
+            <h3>ROI Calculator</h3>
+            <p>Compare investment efficiency across initiatives.</p>
+          </div>
+          <form class="card-body" data-calculator="roi">
+            <label>
+              Investment Cost
+              <input type="number" name="cost" value="180000" min="0" step="1000" />
+            </label>
+            <label>
+              Net Return
+              <input type="number" name="return" value="260000" min="0" step="1000" />
+            </label>
+          </form>
+          <div class="result">
+            <div>
+              <span>ROI</span>
+              <strong data-output="roi-percent">0%</strong>
+            </div>
+            <div>
+              <span>Net Profit</span>
+              <strong data-output="roi-profit">₹0</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="npv-calculator">
+          <div class="card-header">
+            <h3>NPV Calculator</h3>
+            <p>Discount future cash flows to today’s value.</p>
+          </div>
+          <form class="card-body" data-calculator="npv">
+            <label>
+              Initial Investment
+              <input type="number" name="investment" value="400000" min="0" step="1000" />
+            </label>
+            <label>
+              Discount Rate (%)
+              <input type="number" name="rate" value="11" min="0" step="0.01" />
+            </label>
+            <label>
+              Year 1 Cash Flow
+              <input type="number" name="year1" value="140000" min="0" step="1000" />
+            </label>
+            <label>
+              Year 2 Cash Flow
+              <input type="number" name="year2" value="160000" min="0" step="1000" />
+            </label>
+            <label>
+              Year 3 Cash Flow
+              <input type="number" name="year3" value="180000" min="0" step="1000" />
+            </label>
+          </form>
+          <div class="result">
+            <div>
+              <span>Net Present Value</span>
+              <strong data-output="npv-value">₹0</strong>
+            </div>
+            <div>
+              <span>Decision</span>
+              <strong data-output="npv-decision">-</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Values are estimates for planning purposes. Always validate with your finance team.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
