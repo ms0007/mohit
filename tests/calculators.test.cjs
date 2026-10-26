@@ -9,7 +9,7 @@ const publicScript = fs.readFileSync(path.join(__dirname, '..', 'public', 'app.j
 
 function executeCalculator(calculator, values) {
   const outputs = new Map();
-  const form = { dataset: { calculator } };
+  const form = { dataset: { calculator }, addEventListener() {} };
   for (const [key, value] of Object.entries(values)) form[key] = { value: String(value) };
   const document = {
     querySelectorAll: () => [form],
